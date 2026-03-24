@@ -1,137 +1,91 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Osobenui</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>osobenui</title>
 
-        body {
-            background: #0a0a0a;
-            color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
-        }
+<style>
+body {
+    margin: 0;
+    background: #000;
+    color: white;
+    font-family: Arial;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
 
-        .container {
-            text-align: center;
-            animation: fadeIn 1.5s ease-in-out;
-        }
+.container {
+    text-align: center;
+}
 
-        h1 {
-            font-size: 3rem;
-            color: #a855f7;
-            margin-bottom: 10px;
-            animation: glow 2s infinite alternate;
-        }
+/* Аватар */
+.avatar {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 3px solid #a855f7;
+    box-shadow: 0 0 25px #a855f7;
+    margin-bottom: 15px;
+}
 
-        p {
-            color: #aaa;
-            margin-bottom: 30px;
-        }
+/* Кнопки */
+a {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 20px;
+    border: 1px solid #a855f7;
+    color: #a855f7;
+    text-decoration: none;
+    border-radius: 10px;
+}
 
-        .socials a {
-            display: inline-block;
-            margin: 10px;
-            padding: 12px 20px;
-            border: 1px solid #a855f7;
-            border-radius: 10px;
-            color: #a855f7;
-            text-decoration: none;
-            transition: 0.3s;
-        }
+a:hover {
+    background: #a855f7;
+    color: black;
+}
 
-        .socials a:hover {
-            background: #a855f7;
-            color: #000;
-            transform: scale(1.1);
-        }
-
-        @keyframes glow {
-            from {
-                text-shadow: 0 0 10px #a855f7;
-            }
-            to {
-                text-shadow: 0 0 25px #a855f7, 0 0 50px #9333ea;
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Фоновая анимация */
-        .bg {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: -1;
-        }
-
-        .bg span {
-            position: absolute;
-            display: block;
-            width: 20px;
-            height: 20px;
-            background: rgba(168, 85, 247, 0.2);
-            animation: animate 20s linear infinite;
-            bottom: -150px;
-            border-radius: 50%;
-        }
-
-        @keyframes animate {
-            0% {
-                transform: translateY(0) scale(1);
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-1000px) scale(0);
-                opacity: 0;
-            }
-        }
-    </style>
+/* Музыка кнопка */
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #a855f7;
+    border: none;
+    color: black;
+    border-radius: 10px;
+    cursor: pointer;
+}
+</style>
 </head>
+
 <body>
 
-<div class="bg">
-    <span style="left:10%; animation-duration:15s;"></span>
-    <span style="left:20%; animation-duration:12s;"></span>
-    <span style="left:30%; animation-duration:18s;"></span>
-    <span style="left:40%; animation-duration:10s;"></span>
-    <span style="left:50%; animation-duration:20s;"></span>
-    <span style="left:60%; animation-duration:14s;"></span>
-    <span style="left:70%; animation-duration:16s;"></span>
-    <span style="left:80%; animation-duration:11s;"></span>
-    <span style="left:90%; animation-duration:13s;"></span>
-</div>
-
 <div class="container">
-    <h1>Osobenui</h1>
-    <p>Добро пожаловать на мой сайт</p>
 
-    <div class="socials">
-        <a href="https://t.me/your_username" target="_blank">Telegram</a>
-        <a href="https://instagram.com/your_username" target="_blank">Instagram</a>
-        <a href="https://github.com/your_username" target="_blank">GitHub</a>
-    </div>
+<img src="avatar.jpg" class="avatar">
+
+<h1>osobenui</h1>
+
+<a href="https://www.youtube.com/@Osobenui" target="_blank">YouTube</a>
+<a href="https://www.tiktok.com/@0sobenui" target="_blank">TikTok</a>
+
+<br>
+
+<button onclick="playMusic()">▶ Включить музыку</button>
+
 </div>
+
+<!-- МУЗЫКА -->
+<iframe id="player" width="0" height="0" src="" allow="autoplay"></iframe>
+
+<script>
+function playMusic() {
+    document.getElementById("player").src =
+    "https://www.youtube.com/embed/o-YBDTqX_ZU?autoplay=1";
+}
+</script>
 
 </body>
 </html>
